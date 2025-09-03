@@ -1,0 +1,97 @@
+{
+    "elmType": "div",
+    "style": {
+        "display": "flex",
+        "flex-direction": "row",
+        "align-items": "center",
+        "cursor": "pointer",
+        "padding": "3px 5px 3px 5px",
+        "border-radius": "5px"
+    },
+    "attributes": {
+        "class": "ms-fontColor-themePrimary ms-fontColor-themeDark--hover ms-bgColor-themeLighter--hover"
+    },
+    "customRowAction": {
+        "action": "defaultClick"
+    },
+    "customCardProps": {
+        "openOnEvent": "hover",
+        "directionalHint": "rightCenter",
+        "isBeakVisible": true,
+        "formatter": {
+            "elmType": "div",
+            "style": {
+                "max-height": "300px",
+                "padding": "5px 20px 5px 20px",
+                "display": "flex",
+                "flex-direction": "column"
+            },
+            "children": [
+                {
+                    "elmType": "div",
+                    "style": {
+                        "padding": "10px",
+                        "font-weight": "bold",
+                        "font-size": "20px",
+                        "display": "flex",
+                        "align-items": "center",
+                        "flex-direction": "row"
+                    },
+                    "attributes": {
+                        "class": "ms-fontColor-themePrimary"
+                    },
+                    "children": [
+                        {
+                            "elmType": "div",
+                            "style": {
+                                "margin-right": "5px"
+                            },
+                            "attributes": {
+                                "iconName": "Comment"
+                            }
+                        },
+                        {
+                            "elmType": "div",
+                            "txtContent": "=if([$_CommentCount] == '', 0, [$_CommentCount])"
+                        }
+                    ]
+                },
+                {
+                    "elmType": "div",
+                    "children": [
+                        {
+                            "forEach": "commentIterator in [$Comments]",
+                            "elmType": "div",
+                            "style": {
+                                "margin-bottom": "5px",
+                                "display": "flex",
+                                "align-items": "center"
+                            },
+                            "children": [
+                                {
+                                    "elmType": "span",
+                                    "txtContent": "[$commentIterator]"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "children": [
+        {
+            "elmType": "div",
+            "style": {
+                "margin-right": "5px"
+            },
+            "attributes": {
+                "iconName": "Comment"
+            }
+        },
+        {
+            "elmType": "div",
+            "txtContent": "=if([$_CommentCount] == '', 0, [$_CommentCount])"
+        }
+    ]
+}
